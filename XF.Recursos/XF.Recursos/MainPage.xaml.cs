@@ -9,31 +9,43 @@ namespace XF.Recursos
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
-		{
-			InitializeComponent();
-		}
 
-
-        private async void btnListSimples_Clicked(object sender, EventArgs e)
+        public MainPage()
         {
-            await Navigation.PushAsync(new Lista.SimplesView());
+            InitializeComponent();
+        }
+        private async void btnPicker_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Controles.ListPickerView());
         }
 
-        private async void btnListClasse_Clicked(object sender, EventArgs e)
+        private async void btnEditor_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Lista.ClasseView());
+            await Navigation.PushAsync(new Controles.EditorView());
+        }
+        private async void btnData_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Controles.PickerView());
+        }
+        private async void btnProgresso_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Controles.ProgressoView());
+        }
+        private async void btnStepper_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Controles.StepperView());
+        }
+        private async void btnHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PassParameter.HomeView(DateTime.Now.ToString("u")));
         }
 
-        private async void btnListProduto_Clicked(object sender, EventArgs e)
+        private async void btnMC_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Lista.ProdutoView());
+            await Navigation.PushAsync(new PassParameter.MCHomeView());
         }
 
-        private async void btnListaCards_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Lista.ListaCards());
-        }
+
         #region Estilo
         private async void btnSimples_Clicked(object sender, EventArgs e)
         {
@@ -49,7 +61,26 @@ namespace XF.Recursos
         }
         private async void btnTriggers_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Estilo.TriggersView());
+             await Navigation.PushAsync(new Estilo.TriggersView());
+        }
+        #endregion
+
+        #region Lista
+        private async void btnListSimples_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Lista.SimplesView());
+        }
+        private async void btnListClasse_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Lista.ClasseView());
+        }
+        private async void btnProduto_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Lista.ProdutoView());
+        }
+        private async void btnListaCards_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Lista.ListaCards());
         }
         #endregion
     }

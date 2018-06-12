@@ -20,7 +20,7 @@ namespace XF.Recursos.Lista
 
         public ProdutoView()
         {
-           if (_vmProdutos == null)
+            if (_vmProdutos == null)
                 _vmProdutos = new ViewModelProdutos();
 
             BindingContext = _vmProdutos;
@@ -56,8 +56,6 @@ namespace XF.Recursos.Lista
             DisplayAlert("Produto selecionado",
                 $"Id: {itemSelecionado.Id} - {itemSelecionado.Descricao}", "OK");
         }
-
-
     }
 
 
